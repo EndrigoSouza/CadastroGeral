@@ -1,9 +1,7 @@
 package com.cadastroGeral.cadastroGeral.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +13,9 @@ import lombok.NoArgsConstructor;
 @Entity
 public class InscricaoEstadual {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name="inscricao", length = 255)
     private String inscricao;
 
     @ManyToOne
@@ -24,5 +24,6 @@ public class InscricaoEstadual {
 
     @ManyToOne
     @JoinColumn(name = "pessoafisica_id")
-    private Pessoafisica pessoafisica;
-}
+    private PessoaFisica pessoafisica;
+
+    }

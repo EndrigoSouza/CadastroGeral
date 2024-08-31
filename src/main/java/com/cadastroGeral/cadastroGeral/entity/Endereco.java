@@ -1,10 +1,7 @@
 package com.cadastroGeral.cadastroGeral.entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,16 +10,32 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(name="endereco")
 public class Endereco {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="cep", length = 255)
     private String cep;
+
+    @Column(name="rua", length = 255)
     private String rua;
+
+    @Column(name="numero", length = 255)
     private String numero;
+
+    @Column(name="bairro", length = 255)
     private String bairro;
+
+    @Column(name="municipio", length = 255)
     private String municipio;
+
+    @Column(name="estado", length = 255)
     private String estado;
+
+    @Column(name="complemento", length = 255)
     private String complemento;
 
     @ManyToOne
@@ -31,7 +44,7 @@ public class Endereco {
 
     @ManyToOne
     @JoinColumn(name = "pessoafisica_id")
-    private Pessoafisica pessoaFisica;
+    private PessoaFisica pessoaFisica;
 
     @ManyToOne
     @JoinColumn(name = "dependente_id")

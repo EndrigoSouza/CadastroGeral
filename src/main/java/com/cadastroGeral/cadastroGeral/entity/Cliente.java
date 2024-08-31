@@ -25,7 +25,7 @@ public class Cliente {
     @Column(name="sexo", length = 2)
     private Integer sexo;
 
-    @Column(name="nome", length = 255)
+    @Column(name="email", length = 255)
     private String email;
 
     @ManyToOne

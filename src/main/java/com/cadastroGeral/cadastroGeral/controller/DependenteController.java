@@ -1,8 +1,9 @@
 package com.cadastroGeral.cadastroGeral.controller;
 
 
-import com.cadastroGeral.cadastroGeral.dto.CnaeDTO;
+
 import com.cadastroGeral.cadastroGeral.dto.DependenteDTO;
+import com.cadastroGeral.cadastroGeral.service.DependenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,17 +14,16 @@ import java.util.List;
 @RequestMapping(value = "/api/v1/dependente")
 
 public class DependenteController {
-
     @Autowired
-    Dependenteservice service;
+    DependenteService service;
 
-    @GetMapping
+@GetMapping
     public ResponseEntity<List<DependenteDTO>> buscarTodos() {
-        List<CnaeDTO> dependente = service.findAll();
+        List<DependenteDTO> dependente = service.findAll();
         return ResponseEntity.ok(dependente);
     }
     @GetMapping(value = "/{id}")
-    public ResponseEntity<CnaeDTO> buscarPorId(@PathVariable("id") Long id) {
+    public ResponseEntity<DependenteDTO> buscarPorId(@PathVariable("id") Long id) {
         return ResponseEntity.ok(service.findById(id));
     }
     @PostMapping
@@ -37,8 +37,8 @@ public class DependenteController {
         return ResponseEntity.ok("Dependente deletado com sucesso!");
     }
     @PatchMapping
-    public ResponseEntity<String> update(CnaeDTO cnaeDTO) {
-        Long id = service.save(cnaeDTO);
+    public ResponseEntity<String> update(DependenteDTO dependenteDTO) {
+       Long id = service.save(dependenteDTO);
         return ResponseEntity.ok("Dependente atualizado com sucesso!");
     }
 

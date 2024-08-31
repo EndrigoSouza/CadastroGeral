@@ -1,4 +1,4 @@
 package com.cadastroGeral.cadastroGeral.service;
 
-public class PessoaFisicaRepository {
+public class TelefoneService {
 }

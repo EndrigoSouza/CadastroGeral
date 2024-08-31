@@ -26,7 +26,7 @@ public class Telefone {
 
     @ManyToOne
     @JoinColumn(name = "pessoafisica_id")
-    private Pessoafisica pessoafisica;
+    private PessoaFisica pessoafisica;
 
     @ManyToOne
     @JoinColumn(name = "dependente_id")
