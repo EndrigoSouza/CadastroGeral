@@ -4,6 +4,6 @@ public record TelefoneDTO (
 
         Long id,
         String numero,
-        boolean tipo
+        Integer tipo
 ){
 }

@@ -26,7 +26,7 @@ public class ClienteController {
             return ResponseEntity.ok(service.findById(id));
         }
         @PostMapping
-        public ResponseEntity<String> save(ClienteDTO clienteDTO) {
+        public ResponseEntity<String> save(@RequestBody ClienteDTO clienteDTO) {
             Long id = service.save(clienteDTO);
             return ResponseEntity.ok("Cliente salvo com sucesso!");
         }

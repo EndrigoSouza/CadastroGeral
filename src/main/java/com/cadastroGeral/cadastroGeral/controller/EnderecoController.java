@@ -26,7 +26,7 @@ public class EnderecoController {
         return ResponseEntity.ok(service.findById(id));
     }
     @PostMapping
-    public ResponseEntity<String> save(EnderecoDTO enderecoDTO) {
+    public ResponseEntity<String> save(@RequestBody EnderecoDTO enderecoDTO) {
         Long id = service.save(enderecoDTO);
         return ResponseEntity.ok("Endereco salvo com sucesso!");
     }

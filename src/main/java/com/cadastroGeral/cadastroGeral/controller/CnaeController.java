@@ -26,7 +26,7 @@ public class CnaeController {
         return ResponseEntity.ok(service.findById(id));
     }
     @PostMapping
-    public ResponseEntity<String> save(CnaeDTO cnaeDTO) {
+    public ResponseEntity<String> save(@RequestBody CnaeDTO cnaeDTO) {
         Long id = service.save(cnaeDTO);
         return ResponseEntity.ok("Cnae salvo com sucesso!");
     }

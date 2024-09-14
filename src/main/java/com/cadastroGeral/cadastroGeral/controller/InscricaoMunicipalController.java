@@ -28,7 +28,7 @@ public class InscricaoMunicipalController {
         return ResponseEntity.ok(service.findById(id));
     }
     @PostMapping
-    public ResponseEntity<String> save(InscricaoMunicipalDTO inscricaoMunicipalDTO) {
+    public ResponseEntity<String> save(@RequestBody InscricaoMunicipalDTO inscricaoMunicipalDTO) {
         Long id = service.save(inscricaoMunicipalDTO);
         return ResponseEntity.ok("InscricaoMunicipal salvo com sucesso!");
     }

@@ -45,12 +45,11 @@ public class PessoaFisicaService {
         }
     }
 
-    public Long update(PessoaFisicaDTO pessoaFisicaTO) {
-        PessoaFisica pessoaFisica = mapper.paraEntity(pessoaFisicaTO);
+    public Long update(PessoaFisicaDTO pessoaFisicaDTO) {
+        PessoaFisica pessoaFisica = mapper.paraEntity(pessoaFisicaDTO);
         if (repository.existsById(pessoaFisica.getId())) {
             return repository.save(pessoaFisica).getId();
         } else {
-            Thread inscricaMunicipal;
             throw new RuntimeException("PessoaFisica com id" + pessoaFisica.getId() + "Não foi encontrado");
         }
     }

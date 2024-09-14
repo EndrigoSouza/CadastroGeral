@@ -21,6 +21,11 @@ public class ClienteService {
         List<Cliente> cliente = repository.findAll();
         return mapper.paraDTO(cliente);
     }
+
+    /**
+        Método responsável por retornar um cliente com base em um ID
+        @param id ID na tabela Cliente
+     */
     public ClienteDTO findById(Long id) {
         Cliente cliente = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("Cliente com id" + id + "Não foi encontrado"));

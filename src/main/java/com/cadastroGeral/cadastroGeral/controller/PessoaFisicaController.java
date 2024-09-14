@@ -27,7 +27,7 @@ public class PessoaFisicaController {
         return ResponseEntity.ok(service.findById(id));
     }
     @PostMapping
-    public ResponseEntity<String> save(PessoaFisicaDTO pessoaFisicaDTO) {
+    public ResponseEntity<String> save(@RequestBody PessoaFisicaDTO pessoaFisicaDTO) {
         Long id = service.save(pessoaFisicaDTO);
         return ResponseEntity.ok("PessoaFisica salvo com sucesso!");
     }

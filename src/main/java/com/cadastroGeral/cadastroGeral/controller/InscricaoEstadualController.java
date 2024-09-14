@@ -27,7 +27,7 @@ public class InscricaoEstadualController {
         return ResponseEntity.ok(service.findById(id));
     }
     @PostMapping
-    public ResponseEntity<String> save(InscricaoEstadualDTO inscricaoEstadualDTO) {
+    public ResponseEntity<String> save(@RequestBody InscricaoEstadualDTO inscricaoEstadualDTO) {
         Long id = service.save(inscricaoEstadualDTO);
         return ResponseEntity.ok("InscricaoEstadual salvo com sucesso!");
     }

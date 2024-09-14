@@ -27,7 +27,7 @@ public class DependenteController {
         return ResponseEntity.ok(service.findById(id));
     }
     @PostMapping
-    public ResponseEntity<String> save(DependenteDTO dependenteDTO) {
+    public ResponseEntity<String> save(@RequestBody DependenteDTO dependenteDTO) {
         Long id = service.save(dependenteDTO);
         return ResponseEntity.ok("Dependente salvo com sucesso!");
     }

@@ -1,8 +1,6 @@
 package com.cadastroGeral.cadastroGeral.dto;
 
-import org.springframework.data.annotation.Id;
-
-public record Responsavel (
+public record ResponsavelDTO(
 
 
      Long id,
