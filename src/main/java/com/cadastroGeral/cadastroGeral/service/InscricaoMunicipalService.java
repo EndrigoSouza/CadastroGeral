@@ -25,6 +25,10 @@ public class InscricaoMunicipalService {
         List<InscricaoMunicipal> inscricaoMunicipal = repository.findAll();
         return mapper.paraDTO(inscricaoMunicipal);
     }
+    /**
+     Método responsável por retornar um inscricaoMuniciap de uma pessoa fisica e juridica com base em um ID
+     @param id ID na tabela inscricaoMunicipal
+     */
 
     public InscricaoMunicipalDTO findById(Long id) {
         InscricaoMunicipal inscricaoMunicipal = repository.findById(id).orElseThrow(

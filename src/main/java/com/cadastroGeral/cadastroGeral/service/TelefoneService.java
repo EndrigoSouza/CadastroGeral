@@ -26,6 +26,12 @@ public class TelefoneService {
         return mapper.paraDTO(telefone);
     }
 
+    /**
+     Método responsável por retornar um telefone  de todos que ultilizao telefone acima
+     com base em um ID
+     @param id ID na tabela telefone
+     */
+
     public TelefoneDTO findById(Long id) {
         Telefone telefone = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("Telefone com id" + id + "Não foi encontrado"));

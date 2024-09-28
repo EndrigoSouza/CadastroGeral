@@ -26,6 +26,11 @@ public class DependenteService {
         return mapper.paraDTO(dependentes);
     }
 
+    /**
+     Método responsável por retornar um dependente da um pessoa fisica com base em um ID
+     @param id ID na tabela dependente
+     */
+
     public DependenteDTO findById(Long id) {
         Dependente dependente = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("Dependente com id" + id + "Não foi encontrado"));

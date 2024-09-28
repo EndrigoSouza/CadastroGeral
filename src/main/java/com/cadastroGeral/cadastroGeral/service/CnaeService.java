@@ -24,6 +24,11 @@ public class CnaeService {
         List<Cnae> cnae = repository.findAll();
         return mapper.paraDTO(cnae);
     }
+    /**
+     Método responsável por retornar um cnae do cliente com base em um ID
+     @param id ID na tabela cnae
+     */
+
 
     public CnaeDTO findById(Long id) {
         Cnae cnae = repository.findById(id).orElseThrow(

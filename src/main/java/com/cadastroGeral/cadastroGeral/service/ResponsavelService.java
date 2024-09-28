@@ -26,6 +26,12 @@ public class ResponsavelService {
         return mapper.paraDTO(responsavel);
     }
 
+    /**
+     Método responsável por retornar um responsavel  aquele que assina todos os dados pela empresa
+     com base em um ID
+     @param id ID na tabela responsavel
+     */
+
     public ResponsavelDTO findById(Long id) {
         Responsavel responsavel = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("Responsavel com id" + id + "Não foi encontrado"));

@@ -29,6 +29,13 @@ public class EnderecoService {
         return mapper.paraDTO(endereco);
 
     }
+    /**
+     Método responsável por retornar um Endereço a pessoa juridica, pessoa fisica, cliente,dependentes,socios, tudo ligado
+     com base em um ID
+     @param id ID na tabela Endereco
+     */
+
+
 
     public Long save(EnderecoDTO enderecoDTO) {
        Endereco endereco = mapper.paraEntity(enderecoDTO);

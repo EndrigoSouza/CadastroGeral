@@ -25,6 +25,13 @@ public class SocioService {
         return mapper.paraDTO(socio);
     }
 
+    /**
+     Método responsável por retornar um Socio  cadastro dos socios da empresa
+     com base em um ID
+     @param id ID na tabela socio
+     */
+
+
     public SocioDTO findById(Long id) {
         Socio socio = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("Socio com id" + id + "Não foi encontrado"));

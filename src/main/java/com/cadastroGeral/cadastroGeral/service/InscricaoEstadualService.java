@@ -25,6 +25,12 @@ public class InscricaoEstadualService {
         return mapper.paraDTO(inscricaoEstadual);
     }
 
+
+    /**
+     Método responsável por retornar um inscricaoEstadual de uma pessoa fisica e juridica com base em um ID
+     @param id ID na tabela inscricaoEstadual
+     */
+
     public InscricaoEstadualDTO findById(Long id) {
         InscricaoEstadual inscricaoEstadual = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("InscricaoEstadual com id" + id + "Não foi encontrado"));

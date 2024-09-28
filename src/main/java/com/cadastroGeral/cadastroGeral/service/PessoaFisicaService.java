@@ -25,6 +25,12 @@ public class PessoaFisicaService {
         return mapper.paraDTO(pessoaFisica);
     }
 
+    /**
+     Método responsável por retornar um pessoaFisica com todoos os dados necessario para fazer o cadastro
+     com base em um ID
+     @param id ID na tabela pessoaFisica
+     */
+
     public PessoaFisicaDTO findById(Long id) {
         PessoaFisica pessoaFisica = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("PessoaFisica com id" + id + "Não foi encontrado"));
